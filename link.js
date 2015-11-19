@@ -64,7 +64,7 @@ module.exports = {
 
 			if (! stats.isSymbolicLink()) {
 				stamp = moment().format('YYYYMMDDHHmmSS');
-				backupDest = home('~/.foo.' + stamp);
+				backupDest = home('~/.' + filename + '.' + stamp);
 				profileContents = fs.readFileSync(destFile);
 
 				fs.writeFileSync(backupDest, profileContents);
