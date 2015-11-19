@@ -8,4 +8,9 @@ program
 	.option('-f, --filename [filename]', 'Link only the specified [filename]', '')
 	.parse(process.argv);
 
+// display the help if no filename was passed
+if (! program.filename) {
+	program.help();
+}
+
 link.linkNewFile(program.filename);
