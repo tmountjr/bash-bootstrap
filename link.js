@@ -1,9 +1,14 @@
-#!/usr/bin/env node
-
 var fs = require('fs'),
 	exec = require('child_process').execSync,
 	bbserr = require('./bbserr.js');
 
+/**
+ * Create a symlink between [symlinkSource] and [symlinkDest]. Put outside the exports statement so it's not available except within this module.
+ * 
+ * @param  {string} symlinkSource The full path to the source file for the symlink
+ * @param  {string} symlinkDest   The full path to the destination file for the symlink
+ * @return {null}
+ */
 function createSymlink(symlinkSource, symlinkDest) {
 	fs.symlink(symlinkSource, symlinkDest, function(err) {
 		if (err) bbserr.fail(err.message);
@@ -11,11 +16,6 @@ function createSymlink(symlinkSource, symlinkDest) {
 		exec('source ' + symlinkDest);
 		return;
 	});
-}
-
-function LinkException(message) {
-	this.message = message;
-	this.name = 'LinkException';
 }
 
 module.exports = {
@@ -27,7 +27,7 @@ module.exports = {
 	 * 		.bashrc
 	 * 		.bash_profile
 	 * @param  {string} filename The source file to link
-	 * @return {void}
+	 * @return {null}
 	 */
 	linkNewFile : function(filename) {
 		var home 			= require('expand-home-dir'),
