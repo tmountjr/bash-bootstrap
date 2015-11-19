@@ -1,11 +1,12 @@
 #!/usr/bin/env node
 
 var fs = require('fs'),
-	exec = require('child_process').execSync;
+	exec = require('child_process').execSync,
+	bbserr = require('./bbserr.js');
 
 function createSymlink(symlinkSource, symlinkDest) {
 	fs.symlink(symlinkSource, symlinkDest, function(err) {
-		if (err) throw err;
+		if (err) bbserr.fail(err.message);
 
 		exec('source ' + symlinkDest);
 		return;
@@ -41,14 +42,10 @@ module.exports = {
 			profileContents;
 
 		// check for a blank filename
-		if (!filename || filename.length === 0) {
-			throw new LinkException('"filename" value cannot be blank.');
-		}
+		if (!filename || filename.length === 0) bbserr.fail('The "filename" parameter cannot be blank.');
 
 		// check that we're linking an allowed file
-		if (allowedFiles.indexOf(filename) === -1) {
-			throw new LinkException('Not allowed to link "' + filename + '".');
-		}
+		if (allowedFiles.indexOf(filename) === -1) bbserr.fail('Not allowed to link "' + filename + '".');
 
 		sourceFile = __dirname + '/' + filename;
 		destFile = home('~/.' + filename);
@@ -61,7 +58,7 @@ module.exports = {
 					return;
 				} else {
 					// in all other cases, return the error
-					throw err;
+					bbserr.fail('An error occurred: ' + err.message);
 				}
 			}
 

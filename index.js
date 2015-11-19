@@ -5,7 +5,7 @@ var link = require('./link.js'),
 
 program
 	.version('1.0.0')
-	.option('-f, --filename [filename]', 'Link only the specified [filename]', '')
+	.option('-f, --filename [filename]', 'Link the specified [filename]', '')
 	.parse(process.argv);
 
 // display the help if no filename was passed

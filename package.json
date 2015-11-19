@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/tmountjr/bash-bootstrap#readme",
   "dependencies": {
+    "colors": "^1.1.2",
     "commander": "^2.9.0",
     "expand-home-dir": "0.0.2",
     "moment": "^2.10.6"
