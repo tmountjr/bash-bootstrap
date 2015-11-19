@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/tmountjr/bash-bootstrap/issues"
   },
-  "homepage": "https://github.com/tmountjr/bash-bootstrap#readme"
+  "homepage": "https://github.com/tmountjr/bash-bootstrap#readme",
+  "dependencies": {
+    "commander": "^2.9.0",
+    "expand-home-dir": "0.0.2",
+    "moment": "^2.10.6"
+  }
 }
