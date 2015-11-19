@@ -1,6 +1,6 @@
 {
   "name": "bash-bootstrap",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Bootstrap some basic bash config files",
   "main": "index.js",
   "repository": {
@@ -8,8 +8,7 @@
     "url": "git+https://github.com/tmountjr/bash-bootstrap.git"
   },
   "keywords": [
-    "bash",
-    "profile"
+    "bash"
   ],
   "author": "Tom Mount <tmountjr@gmail.com>",
   "license": "Apache-2.0",
@@ -26,5 +25,8 @@
   "preferGlobal": true,
   "bin": {
     "bashupdate": "index.js"
+  },
+  "scripts": {
+    "bashupdate": "node index.js"
   }
 }
