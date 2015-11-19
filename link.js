@@ -31,7 +31,7 @@ module.exports = {
 	linkNewFile : function(filename) {
 		var home 			= require('expand-home-dir'),
 			moment 			= require('moment'),
-			allowedFiles	= ['profile', 'bashrc', 'bash_profile', 'foo'],
+			allowedFiles	= ['profile', 'bashrc', 'bash_profile'],
 			sourceFile 		= '',
 			destFile 		= '',
 
