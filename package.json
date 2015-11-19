@@ -1,0 +1,20 @@
+{
+  "name": "bash-bootstrap",
+  "version": "1.0.0",
+  "description": "Bootstrap some basic bash config files",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tmountjr/bash-bootstrap.git"
+  },
+  "keywords": [
+    "bash",
+    "profile"
+  ],
+  "author": "Tom Mount <tmountjr@gmail.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/tmountjr/bash-bootstrap/issues"
+  },
+  "homepage": "https://github.com/tmountjr/bash-bootstrap#readme"
+}
