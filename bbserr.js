@@ -2,7 +2,11 @@ var colors = require('colors');
 
 module.exports = {
 	display : function(message) {
-		console.log("\n" + message.red);
+		console.log("\n" + ("(Error)" + message).red);
+	},
+
+	warn : function(message) {
+		console.log("\n" + ("(Warning) " + message).yellow);
 	},
 
 	fail : function(message) {
