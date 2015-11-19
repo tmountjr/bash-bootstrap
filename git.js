@@ -1,4 +1,4 @@
-var exec = require('child_process').exec,
+var exec = require('child_process').execSync,
 	bbserr = require('./bbserr.js');
 
 function pull(force) {
@@ -10,10 +10,7 @@ function pull(force) {
 		cmd = 'git pull';
 	}
 
-	exec(cmd, function(err, stdout, stderr) {
-		if (err) bbserr.fail('Unable to pull from git. Error was: ' + stderr);
-		process.exit(0);
-	});
+	exec(cmd);
 }
 
 module.exports = pull;
