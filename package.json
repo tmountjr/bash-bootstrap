@@ -21,5 +21,9 @@
     "commander": "^2.9.0",
     "expand-home-dir": "0.0.2",
     "moment": "^2.10.6"
+  },
+  "preferGlobal": true,
+  "bin": {
+    "bashupdate": "index.js"
   }
 }
