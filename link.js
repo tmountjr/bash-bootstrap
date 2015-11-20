@@ -23,9 +23,9 @@ module.exports = {
 	/**
 	 * Links a non-dot filename from the source directory to a dot filename in the user's home folder.
 	 * Allowed filenames are:
-	 * 		.profile
-	 * 		.bashrc
-	 * 		.bash_profile
+	 * 		profile
+	 * 		bashrc
+	 * 		bash_profile
 	 * @param  {string} filename The source file to link
 	 * @return {null}
 	 */
@@ -45,9 +45,9 @@ module.exports = {
 		if (!filename || filename.length === 0) bbserr.fail('The "filename" parameter cannot be blank.');
 
 		// check that we're linking an allowed file
-		if (allowedFiles.indexOf(filename) === -1) bbserr.fail('Not allowed to link "' + filename + '".');
+		if (allowedFiles.indexOf(filename) === -1) bbserr.fail('Not allowed to link ."' + filename + '".');
 
-		sourceFile = __dirname + '/' + filename;
+		sourceFile = __dirname + '/lib/' + filename + '/.' + filename;
 		destFile = home('~/.' + filename);
 
 		fs.lstat(destFile, function(err, stats) {

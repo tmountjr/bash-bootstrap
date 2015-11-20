@@ -10,6 +10,8 @@ function pull(force) {
 		cmd = 'git pull';
 	}
 
+	cmd += ' && git pull --recurse-submodules';
+
 	exec(cmd);
 }
 

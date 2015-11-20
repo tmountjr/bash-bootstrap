@@ -1,0 +1,3 @@
+[submodule "lib/profile"]
+	path = lib/profile
+	url = git@gist.github.com:29862cf24602227fe035.git
